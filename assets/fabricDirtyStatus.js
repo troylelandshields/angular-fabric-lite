@@ -1,4 +1,4 @@
-angular.module('common.fabric.dirtyStatus', [])
+angular.module('common.fabric-lite.dirtyStatus', [])
 
 .service('FabricDirtyStatus', ['$window', function($window) {
 

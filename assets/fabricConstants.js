@@ -1,4 +1,4 @@
-angular.module('common.fabric.constants', [])
+angular.module('common.fabric-lite.constants', [])
 
 .service('FabricConstants', [function() {
 

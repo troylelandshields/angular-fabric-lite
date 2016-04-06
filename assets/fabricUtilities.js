@@ -1,4 +1,4 @@
-angular.module('common.fabric.utilities', [])
+angular.module('common.fabric-lite.utilities', [])
 
 .directive('parentClick', ['$timeout', function($timeout) {
 	return {

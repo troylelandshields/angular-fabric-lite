@@ -1,8 +1,8 @@
-angular.module('common.fabric.canvas', [
-	'common.fabric.window'
+angular.module('common.fabric-lite.canvas', [
+	'common.fabric-lite.window'
 ])
 
-.service('FabricCanvas', ['FabricWindow', '$rootScope', function(FabricWindow, $rootScope) {
+.factory('FabricCanvas', ['FabricWindow', '$rootScope', function(FabricWindow, $rootScope) {
 
 	var self = {
 		canvasId: null,
@@ -22,8 +22,13 @@ angular.module('common.fabric.canvas', [
 	self.createCanvas = function() {
 		self.canvasId = 'fabric-canvas-' + createId();
 		self.element.attr('id', self.canvasId);
-		self.canvas = new FabricWindow.Canvas(self.canvasId);
-		$rootScope.$broadcast('canvas:created');
+    if(self.element.attr('static')){
+      self.canvas = new FabricWindow.StaticCanvas(self.canvasId);
+    }
+    else {
+		  self.canvas = new FabricWindow.Canvas(self.canvasId);
+    }
+		$rootScope.$broadcast('canvas:created', {name: self.element.attr("name"), canvas: self});
 
 		return self.canvas;
 	};

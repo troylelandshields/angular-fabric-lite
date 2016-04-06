@@ -1,7 +1,4 @@
-angular-fabric
+angular-fabric-lite
 ==============
 
-FabricJS bound to AngularJS using a service to act as a `$scope` for easy manipulation.
-Please note that these modules all work but I'm organizing it better as I go.  FabricJS has `muchos` functions.
-
-[Example Site](http://codepen.io/clouddueling/full/Imupw)
+This is a fork of [angular-fabric](https://github.com/michaeljcalkins/angular-fabric), which is good but has way more than I needed for my project. I wanted a simple way to interact with Fabric as angular services.
